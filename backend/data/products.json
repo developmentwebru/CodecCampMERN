@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Mouse",
+        "price": "10.01",
+        "description": "Mouse",
+        "ratings": 4.5,
+        "images": [
+            {
+                "public_id": "products/asfddsfdsgffsfdv",
+                "url": "https://cdn1.ozone.ru/s3/multimedia-b/wc1200/6006361391.jpg"
+            }
+        ],
+        "category": "Electronics",
+        "seller": "Ebay",
+        "stock": 20,
+        "numOfReviews": 32,
+        "reviews": []
+    },
+    {
+        "name": "Sandisk Ultra128GB SDXC UHS-I Memory Card up to 80MB/s",
+        "price": "45.89",
+        "description": "Ultra-fastcards (2) to take better pictures and Full HD videos(1) with your compact to mid-range point-and-shoot cameras and camcorders. With Sandisk Ultra SDXS UHS-I cards you'll benefit",
+        "ratings": 4.5,
+        "images": [
+            {
+                "public_id": "products/asfddsfdsgff5676",
+                "url": "https://cdn1.ozone.ru/multimedia/wc1200/1013479149.jpg"
+            }
+        ],
+        "category": "Electronics",
+        "seller": "Ebay",
+        "stock": 50,
+        "numOfReviews": 32,
+        "reviews": []
+    }
+]
