@@ -536,6 +536,10 @@ ul.CTAs a {            /*496*/
     color: grey;
 }
 
+.navbar-brand img {
+    width: 32px;
+    border-radius: 50%;
+}
 
 
 
