@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import MetaData from './layout/MataData'
+import MetaData from './layout/MetaData'
 
 const Home = () => {
     return (
