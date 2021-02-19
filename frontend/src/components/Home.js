@@ -4,15 +4,25 @@ import Product from './product/Product';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../actions/productAction'
 import Loader from './layout/Loader'
+import { useAlert } from 'react-alert'
+
 
 const Home = () => {
+    const alert = useAlert();
+
     const dispatch = useDispatch();
 
     const { loading, products, error, productsCount } = useSelector(state => state.products)
 
     useEffect(() => {
+        if (error) {
+            return alert.error(error)
+        }
         dispatch(getProducts());
-    }, [dispatch])
+
+
+
+    }, [dispatch, alert, error])
 
     return (
         <Fragment>
