@@ -541,6 +541,8 @@ ul.CTAs a {            /*496*/
     border-radius: 50%;
 }
 
-
+.rounded-circle {
+    width: 68px;
+}
 
 
