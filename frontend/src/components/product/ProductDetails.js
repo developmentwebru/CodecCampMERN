@@ -6,7 +6,7 @@ import { Carousel } from 'react-bootstrap'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductDetails, clearErrors, getProducts } from '../../actions/productAction'
+import { getProductDetails, clearErrors } from '../../actions/productAction'
 import { addItemToCart } from '../../actions/catrActions'
 
 const ProductDetails = ({ match }) => {
