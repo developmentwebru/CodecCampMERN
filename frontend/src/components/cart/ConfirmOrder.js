@@ -26,7 +26,7 @@ const ConfirmOrder = ({ history }) => {
         }
 
         sessionStorage.setItem('orderInfo', JSON.stringify(data))
-        history.push('/')
+        history.push('/payment')
     }
 
     return (
@@ -83,7 +83,7 @@ const ConfirmOrder = ({ history }) => {
                         <p>Total: <span className='order-summary-values'>${totalPrice}</span></p>
 
                         <hr />
-                        <button id='checkout-btn' className='btn btn-primary btn=block' onClick={processToPayment}>Proceed to Pqyment</button>
+                        <button id='checkout-btn' className='btn btn-primary btn=block' onClick={processToPayment}>Proceed to Payment</button>
                     </div>
                 </div>
             </div>
