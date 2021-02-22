@@ -5,13 +5,17 @@ import MetaData from '../layout/MetaData'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux';
-import { addItemToCart } from '../../actions/catrActions'
+import { addItemToCart, removeItemFromCart } from '../../actions/catrActions'
 
 const Cart = () => {
 
     const dispatch = useDispatch();
 
     const { cartItems } = useSelector(state => state.cart)
+
+    const removeCartItemHandler = (id) => {
+        dispatch(removeItemFromCart(id))
+    }
 
     const increaseQty = (id, quantity, stock) => {
         const newQty = quantity + 1;
@@ -24,7 +28,7 @@ const Cart = () => {
     const decreaseQty = (id, quantity) => {
         const newQty = quantity - 1;
 
-        if (newQty <= 0git a) return;
+        if (newQty <= 0) return;
 
         dispatch(addItemToCart(id, newQty))
     }
@@ -41,7 +45,8 @@ const Cart = () => {
                             {cartItems.map(item => (
                                 <Fragment>
                                     <hr />
-                                    <div className='cart-item'>
+
+                                    <div key={item.product} className='cart-item'>
                                         <div className='row'>
                                             <div className='col-4 col-lg-3'>
                                                 <img src={item.image} alt='Laptop' height='90' width='115' />
@@ -65,7 +70,7 @@ const Cart = () => {
                                             </div>
 
                                             <div className='col-4 col-lg-1 mt-4 mt-lg-0'>
-                                                <i id='delete_cart_item' className='fa fa-trash btn btn-danger'></i>
+                                                <i id='delete_cart_item' className='fa fa-trash btn btn-danger' onClick={() => removeCartItemHandler(item.product)}></i>
                                             </div>
                                         </div>
                                     </div>
