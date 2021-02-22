@@ -320,7 +320,7 @@ wrapper form .btn {
     border: 0;
     letter-spacing: 1px;
     line-height: 30px;
-    padding: 5px 20px 5px 30px;
+    padding: 5px 20px 5px 15px;
     color: grey;
     text-decoration: none;
     cursor: default;
@@ -337,7 +337,7 @@ wrapper form .btn {
     background: #bbbbbb;
 }
 
-.acitve {          /*340*/
+.acitve-step {          /*340*/
     background: #fa9c23;
     color: #fff;
 }
@@ -405,7 +405,7 @@ wrapper form .btn {
 .user-info h4 {
     font-weight: 800;
     color: grey;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 }
 
 .user-info p {  /* 411*/
@@ -541,8 +541,16 @@ ul.CTAs a {            /*496*/
     border-radius: 50%;
 }
 
-.rounded-circle {
+/* .rounded-circle {
     width: 68px;
+} */
+
+
+.avatar .rounded-circle {
+    height: 3rem;
+    width: 3rem;
 }
-
-
+.avatar-profile {
+    height: 16rem;
+    width: 16rem;
+}
