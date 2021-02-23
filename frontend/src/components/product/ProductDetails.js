@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductDetails, newReview, clearErrors } from '../../actions/productAction'
 import { addItemToCart } from '../../actions/catrActions'
 import { NEW_REVIEW_RESET } from '../../constants/productConstants'
+import ListReviews from '../review/ListReviews'
 
 const ProductDetails = ({ match }) => {
 
@@ -212,6 +213,11 @@ const ProductDetails = ({ match }) => {
                             </div>
                         </div>
                     </div>
+
+                    {product.reviews && product.reviews.length > 0 && (
+                     <ListReviews reviews={product.reviews} />
+                       
+                    )}
                 </Fragment>
             )
             }
