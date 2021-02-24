@@ -19,8 +19,11 @@ import {
     NEW_PASSWORD_REQUEST,
     NEW_PASSWORD_SUCCESS,
     NEW_PASSWORD_FAIL,
+    ALL_USERS_REQUEST,
+    ALL_USERS_SUCCESS,
+    ALL_USERS_FAIL,
     CLEAR_ERRORS,
-    LOAD_USER_REQUES,
+    LOAD_USER_REQUEST,
     LOAD_USER_SUCCESS,
     LOAD_USER_FAIL,
     LOGOUT_SUCCESS,
@@ -84,7 +87,7 @@ export const register = (userData) => async (dispatch) => {
 //Load user
 export const loadUser = () => async (dispatch) => {
     try {
-        dispatch({ type: LOAD_USER_REQUES })
+        dispatch({ type: LOAD_USER_REQUEST })
 
         const { data } = await axios.get('/api/v1/me')
 
@@ -227,6 +230,26 @@ export const logout = () => async (dispatch) => {
     }
 }
 
+
+//get all users
+export const allUsers = () => async (dispatch) => {
+    try {
+        dispatch({ type: ALL_USERS_REQUEST })
+
+        const { data } = await axios.get('/api/v1/admin/users')
+
+        dispatch({
+            type: ALL_USERS_SUCCESS,
+            payload: data.users
+        })
+
+    } catch (error) {
+        dispatch({
+            type: ALL_USERS_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
 //Clear Errors
 export const clearErrors = () => async (dispatch) => {
     dispatch({
