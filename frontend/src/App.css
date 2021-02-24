@@ -446,7 +446,7 @@ wrapper form .btn {
     padding: 20px;
     background: #232f3e;
 }
-#sidebar ul.components {
+#sidebar ul .components {
     padding: 20px 0px;
     border-bottom: 1px solid #232f3e;
 }

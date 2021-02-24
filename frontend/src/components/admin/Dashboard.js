@@ -4,7 +4,28 @@ import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
 import Sidebar from './Sidebar'
 
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getAdminProducts, clearErrors } from '../../actions/productAction'
+
 const Dashboard = () => {
+
+    const dispatch = useDispatch();
+
+    const { products } = useSelector(state => state.products)
+
+    let outofStock = 0;
+    products.forEach(product => {
+        if (product.stock === 0) {
+            outofStock += 1;
+        }
+    })
+
+    useEffect(() => {
+        dispatch(getAdminProducts())
+
+    }, [dispatch])
+
     return (
         <Fragment>
             <div className='row'>
@@ -25,13 +46,31 @@ const Dashboard = () => {
                         </div>
                     </div>
 
+
+
                     <div className='row pr-4'>
+
                         <div className='col-xl-3 col-sm-6 mb-3'>
                             <div className='card text-white bg-success o-hidden h-100'>
                                 <div className='card-body'>
-                                    <div className='text-center card-size'>Products<br /> <b>45</b></div>
+                                    <div className='text-center card-size'>Products<br />
+                                        <b>{products && products.length}</b></div>
                                 </div>
                                 <Link to='/admin/products' className='card-footer text-white clearfix small z-1'>
+                                    <span className='float-left'>View Details</span>
+                                    <span className='float-right'>
+                                        <i className='fa fa-angel-right'></i>
+                                    </span>
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className='col-xl-3 col-sm-6 mb-3'>
+                            <div className='card text-white bg-danger o-hidden h-100'>
+                                <div className='card-body'>
+                                    <div className='text-center card-size'>Order<br /> <b>9</b></div>
+                                </div>
+                                <Link to='/admin/orders' className='card-footer text-white clearfix small z-1'>
                                     <span className='float-left'>View Details</span>
                                     <span className='float-right'>
                                         <i className='fa fa-angel-right'></i>
@@ -57,7 +96,8 @@ const Dashboard = () => {
                         <div className='col-xl-3 col-sm-6 mb-3'>
                             <div className='card text-white bg-warning o-hidden h-100'>
                                 <div className='card-body'>
-                                    <div className='text-center card-size'>Out of Stock<br /> <b>4</b></div>
+                                    <div className='text-center card-size'>Out of Stock<br />
+                                        <b>{outofStock}</b></div>
                                 </div>
                             </div>
                         </div>
