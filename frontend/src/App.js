@@ -30,15 +30,18 @@ import { NewPassword as NewPassword } from './components/user/NewPassword'
 //admin imports
 import Dashboard from './components/admin/Dashboard'
 import ProductsList from './components/admin/ProductsList'
+import NewProduct from './components/admin/NewProduct'
 
 import ProtectedRoute from './components/route/ProtectedRoute'
 import { loadUser } from './actions/userActions'
+import { useSelector } from 'react-redux'
 import store from './store'
 import axios from 'axios';
 
 // Payment
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+
 
 function App() {
 
@@ -55,6 +58,8 @@ function App() {
 
     getStripeApiKey();
   }, [])
+
+  const { user, loading } = useSelector(state => state.auth)
 
   return (
     <Router>
@@ -89,7 +94,12 @@ function App() {
         </div>
         <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
         <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
-        <Footer />
+        <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
+
+        {!loading && user.role !== 'admin' && (
+          <Footer />
+        )}
+
       </div>
     </Router>
   );
