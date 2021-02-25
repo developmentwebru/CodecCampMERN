@@ -167,7 +167,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 })
 
 
-//Create new rewiew => /api/v1/review
+//Create new review => /api/v1/review
 exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
 
     const { rating, comment, productId } = req.body;
