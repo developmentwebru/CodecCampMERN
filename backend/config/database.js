@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectDatabase = () => {
-    mongoose.connect(process.env.DB_ONLINE_URI, {
+    mongoose.connect("mongodb+srv://developer:dsvSDFRE34354@cluster0.33kh6.mongodb.net/shopit", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true
