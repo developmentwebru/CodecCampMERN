@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+var cors = require('cors')
 const cokieParser = require('cookie-parser')
 const bodyparser = require('body-parser')
 const fileUpload = require('express-fileupload')
@@ -10,7 +10,7 @@ const errorMiddleware = require('./middlewares/errors')
 
 //Setting up config file
 dotenv.config({ path: 'backend/config/config.env' })
-
+app.use(cors())
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cokieParser())
