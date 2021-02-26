@@ -19,9 +19,9 @@ connectDatabase();
 
 //setting up cloudinary config
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_APY_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
+    cloud_name: 'dlth3h3fb',
+    api_key: '625825229995415',
+    api_secret: '0XEo0MDu2rKW1MH0OPRKjBnzXWI'
 })
 const PORT = process.env.PORT || 4000;
 const server = app.listen(PORT, () => {
