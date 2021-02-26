@@ -25,7 +25,7 @@ cloudinary.config({
 })
 const PORT = process.env.PORT || 4000;
 const server = app.listen(PORT, () => {
-    console.log(`Server started on PORT: ${.PORT} in ${process.env.NODE_ENV} mode.D:\\node\\CodingBootcamp\\shopit\\backend\
+    console.log(`Server started on PORT: ${PORT} in ${process.env.NODE_ENV} mode.D:\\node\\CodingBootcamp\\shopit\\backend\
 \server.js`)
 })
 
