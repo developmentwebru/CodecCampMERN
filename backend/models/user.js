@@ -60,8 +60,8 @@ userSchema.methods.comparePassword = async function (enteredPassword) {
 
 //Return JWT token
 userSchema.methods.getJwtToken = function () {
-    return jwt.sign({ id: this._id }, 'DFLNDLFUHIB4IJB343IB', {
-        expiresIn: '7d'
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRES_TIME
     });
 
 }
@@ -76,7 +76,7 @@ userSchema.methods.getResetPasswordToken = function () {
 
 
     // Set token expire time
-    this.resetPasswordExpire = Date.now() + 30 * 60 * 1000
+    this.resetPasswordExpire = Date.now() + process.env.COOKIE_EXPIRES_TIME * 30 * 60 * 1000
 
     return resetToken
 
