@@ -134,7 +134,7 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className='form-group'>
-                                    <label htmlFor='description_field'>Price</label>
+                                    <label htmlFor='description_field'>Description</label>
                                     <textarea rows='8' id='description_field'
                                         className='form-control' value={description} onChange={(e) => setDescrioption(e.target.value)}></textarea>
                                 </div>

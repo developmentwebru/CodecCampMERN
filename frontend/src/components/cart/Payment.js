@@ -129,7 +129,8 @@ const Payment = ({ history }) => {
                     <form className='shadow-lg' onSubmit={submitHandler}>
                         <h1 className='mb-4'>Card Info</h1>
                         <div className='form-group'>
-                            <label htmlFor='card_num_field'>Card Number</label>
+                            <label htmlFor='card_num_field'>Card Number</label><br />
+                            <label htmlFor='card_num_field'>for test: 4000 0027 6000 3184</label>
                             <CardNumberElement
                                 type='text'
                                 id='card_num_field'

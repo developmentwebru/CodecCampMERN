@@ -67,6 +67,7 @@ function App() {
   }, [])
 
   const { user, loading } = useSelector(state => state.auth)
+  const { order } = useSelector(state => state.order)
 
   return (
     <Router>
@@ -95,7 +96,8 @@ function App() {
           <ProtectedRoute path="/password/update" component={UpdatePassword} exact />
 
           <ProtectedRoute path="/orders/me" component={ListOrders} exact />
-          <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
+          {order !== '' &&
+            <ProtectedRoute path="/order/:id" component={OrderDetails} exact />}
 
 
         </div>
