@@ -50,7 +50,7 @@ export const login = (email, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('https://ecomerceru.herokuapp.com/api/v1/login', { email, password }, config)
+        const { data } = await axios.post('/api/v1/login', { email, password }, config)
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -76,7 +76,7 @@ export const register = (userData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('https://ecomerceru.herokuapp.com/api/v1/register', userData, config)
+        const { data } = await axios.post('/api/v1/register', userData, config)
 
         dispatch({
             type: REGISTER_USER_SUCCESS,
@@ -98,7 +98,7 @@ export const loadUser = () => async (dispatch) => {
     try {
         dispatch({ type: LOAD_USER_REQUEST })
 
-        const { data } = await axios.get('https://ecomerceru.herokuapp.com/api/v1/me')
+        const { data } = await axios.get('/api/v1/me')
 
         dispatch({
             type: LOAD_USER_SUCCESS,
@@ -125,7 +125,7 @@ export const updateProfile = (userData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.put('https://ecomerceru.herokuapp.com/api/v1/me/update', userData, config)
+        const { data } = await axios.put('/api/v1/me/update', userData, config)
 
         dispatch({
             type: UPDATE_PROFILE_SUCCESS,
@@ -152,7 +152,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.put('https://ecomerceru.herokuapp.com/api/v1/password/update', passwords, config)
+        const { data } = await axios.put('/api/v1/password/update', passwords, config)
 
         dispatch({
             type: UPDATE_PASSWORD_SUCCESS,
@@ -179,7 +179,7 @@ export const forgotPassword = (email) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('https://ecomerceru.herokuapp.com/api/v1/password/forgot', email, config)
+        const { data } = await axios.post('/api/v1/password/forgot', email, config)
 
         dispatch({
             type: FORGOT_PASSWORD_SUCCESS,
